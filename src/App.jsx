@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div>
-      <div>Настеньчик, доброго дня!</div>
+      <div>Настеньчик, доброго дня! :)</div>
       <div>{text}</div>
       <button>Получить пожелание на день</button>
     </div>
