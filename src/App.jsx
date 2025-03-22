@@ -33,7 +33,7 @@ const App = () => {
     });
   };
 
-  if (day === 22 && month === 3) {
+  if (day === 23 && month === 3) {
     return (
       <div className="happy-birthday-container">
         <div className="fireworks-container">
