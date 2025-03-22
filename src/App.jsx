@@ -1,4 +1,11 @@
+import React from "react";
 import "./App.css";
+import { WISHES } from "./constants";
+import Fireworks from "@fireworks-js/react";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 const App = () => {
   const todayDate = new Date();
@@ -7,23 +14,46 @@ const App = () => {
 
   const text = import.meta.env.VITE_TEXT;
 
-  if (day === 23 && month === 3) {
+  const wishIndex = Math.floor(Math.random() * WISHES.length);
+  const wish = WISHES[wishIndex];
+
+  const handleClickWish = () => {
+    MySwal.fire({
+      title: "Пожелание",
+      text: `${wish}`,
+      showConfirmButton: false,
+    });
+  };
+
+  const handleClicCongratulation = () => {
+    MySwal.fire({
+      title: "С днем рождения!!!",
+      text: `${text}`,
+      showConfirmButton: false,
+    });
+  };
+
+  if (day === 22 && month === 3) {
     return (
-      <div>
-        <div>С днем рождения!</div>
-        <div>
-          <button>Получить пожелание на день</button>
-          <button>Прочитать поздравление</button>
+      <div className="happy-birthday-container">
+        <div className="fireworks-container">
+          <Fireworks />
+        </div>
+        <h2>С днем рождения, Настюшка!</h2>
+        <div className="btns-container">
+          <button onClick={handleClickWish}>Получить пожелание на день</button>
+          <button onClick={handleClicCongratulation}>
+            Прочитать поздравление
+          </button>
         </div>
       </div>
     );
   }
 
   return (
-    <div>
-      <div>Настеньчик, доброго дня! :)</div>
-      <div>{text}</div>
-      <button>Получить пожелание на день</button>
+    <div className="main-container">
+      <h2>Настеньчик, доброго дня!</h2>
+      <button onClick={handleClickWish}>Получить пожелание на день</button>
     </div>
   );
 };
