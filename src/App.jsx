@@ -4,7 +4,7 @@ import { WISHES } from "./constants";
 import Fireworks from "@fireworks-js/react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import nastya from "../public/nastya.png";
+import nastya from "../public/nastya.PNG";
 
 const MySwal = withReactContent(Swal);
 
