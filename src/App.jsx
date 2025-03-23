@@ -30,10 +30,11 @@ const App = () => {
     MySwal.fire({
       title: "С днем рождения!!!",
       text: `${text}`,
-      showConfirmButton: false,
+      showConfirmButton: true,
       imageUrl: `${nastya}`,
-      imageWidth: 50,
+      imageWidth: 40,
       imageAlt: "nastya",
+      confirmButtonText: 'Спасибо 😊'
     });
   };
 
