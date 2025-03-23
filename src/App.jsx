@@ -4,6 +4,7 @@ import { WISHES } from "./constants";
 import Fireworks from "@fireworks-js/react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import nastya from "../public/nastya.png";
 
 const MySwal = withReactContent(Swal);
 
@@ -30,6 +31,9 @@ const App = () => {
       title: "С днем рождения!!!",
       text: `${text}`,
       showConfirmButton: false,
+      imageUrl: `${nastya}`,
+      imageWidth: 50,
+      imageAlt: "nastya",
     });
   };
 
